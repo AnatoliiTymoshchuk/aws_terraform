@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "${var.location}"
 }
   
 resource "aws_instance" "test_VM" {
-  # Amazon Linux AMI 2017.03.1 (HVM)
+  # Amazon Linux AMI 2017.03.1 (HVM) 
   ami           = "ami-449f483b"
   instance_type = "t2.micro"
 
@@ -13,5 +13,10 @@ resource "aws_instance" "test_VM" {
 }
 
 variable "vm_name" {
-  description = "Name for VM to be created1"
+   description = "Name for VM"
+}
+
+variable "location" {
+      default = "ap-northeast-1"
+      description = "Resource location"
 }
