@@ -6,6 +6,6 @@ provider "aws" {
    ami           = "ami-657bd20a"
    instance_type = "t2.micro"
    tags {
-     Name = "stln-auto-user"
+     Name = "at-auto-user"
    }
 }
